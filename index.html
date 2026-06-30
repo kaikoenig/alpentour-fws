@@ -747,6 +747,22 @@
         </div>
       </div>
 
+      <!-- Reisebilder-Hinweis -->
+      <div class="ip-section">
+        <div class="ip-header" onclick="toggleSection('sec-fotos')">
+          <span class="ip-icon">📸</span>
+          <span class="ip-label">Reisebilder von der Tour</span>
+          <span class="ip-chevron" id="chev-sec-fotos">›</span>
+        </div>
+        <div class="ip-sub" id="sec-fotos">
+          <div class="pack-inner" id="fotos-gallery-container">
+            <div id="fotos-loading" style="font-size:0.78rem;color:#888;padding:8px 0">Lade Bilder…</div>
+            <div id="fotos-empty" style="display:none;font-size:0.78rem;color:#888;padding:8px 0">Noch keine Bilder von der Tour hochgeladen.</div>
+            <div id="fotos-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Unterkünfte -->
       <div class="ip-section">
         <div class="ip-header" onclick="toggleSection('sec-unterk')">
@@ -957,7 +973,10 @@
           <div style="font-size:0.9rem;font-weight:700;color:#1a1a1a;margin-bottom:4px">${d.title}</div>
           ${d.addr ? `<div style="font-size:0.68rem;color:#999;margin-bottom:6px">📍 ${d.addr}</div>` : ''}
           <div style="font-size:0.75rem;color:#555;line-height:1.45;margin-bottom:8px">${d.text}</div>
-          <a href="${d.link}" target="_blank" style="color:#006b69;font-size:0.75rem;text-decoration:none">🔗 ${d.linktext}</a>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a href="${d.link}" target="_blank" style="color:#006b69;font-size:0.75rem;text-decoration:none">🔗 ${d.linktext}</a>
+            ${d.cam ? `<a href="${d.cam}" target="_blank" style="color:#006b69;font-size:0.75rem;text-decoration:none">📷 Live-Webcam</a>` : ''}
+          </div>
         </div>
       </div>`;
   }
@@ -1053,7 +1072,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZOefm4mvis_ZwD0-RRM1DzmTQLw2W7B370Qd2e8R1jURZ4WX2hosoONQUD-mrqR3DQEiFztVNTkySG2iDbjGsRZr7xfoSKnuTuCFanT7yhbKo-EiMy-L6EYrsupM_SuHDGNvsOG0_Zzfv5y3g=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZPVW3b3qnG3F8WAH0DCJgBx6CJApC5lgxqoPOQgfOsPRUYLrxptMmFtXk1qABH0gKipqpXaGrkmSMpS67wjmjLWNvS7pMq9tLOaOsc2lYPKMcGhA0MgPoDQlOuh1I17z98S6jB6ZFKM4uFz=s4800-w800-h600',
       ],
-      addr: 'Reichenauer Str. 147, 6020 Innsbruck', text: 'Erste Übernachtung nach ca. 9–10 Stunden Zugfahrt. Die JH liegt im Stadtteil Reichenau, ca. 3 km vom Zentrum. Innsbruck bietet einen schönen Auftakt in die Alpen – Blick auf die Nordkette inklusive.',
+      addr: 'Reichenauer Str. 147, 6020 Innsbruck', cam: 'https://www.bergfex.at/sommer/innsbruck/webcams/', text: 'Erste Übernachtung nach ca. 9–10 Stunden Zugfahrt. Die JH liegt im Stadtteil Reichenau, ca. 3 km vom Zentrum. Innsbruck bietet einen schönen Auftakt in die Alpen – Blick auf die Nordkette inklusive.',
       link: 'https://www.youth-hostel-innsbruck.at/',
       linktext: '🌐 youth-hostel-innsbruck.at'
     },
@@ -1065,7 +1084,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZMNJUoVd-0JA_6Pg7KctybECwFKfOgGFk-VJknUfpSZ8J6BbBRc8oQ6VrY_gHqkB8Dht7emu_vP1pCJNQ4j1EY2bzqQyGzjBXrCc2w7k-uoAdX6-3KFVyBfb-1cFW6rqnUqzI5bJKv6aqVoA=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZN_tExeXVZkYuWjzH4xYeAUufH8KH9NwvclTRZE_wpGZMiUAdjz9ZWvUHgBbRcyk1doaX1PgEroHXdXWAT7Xp0hgZPdNGMpuolvt7KljoHRcNDfngJWiHiXnG4Dth_4RcflBvC8Yqvj8q_aXw=s4800-w800-h600',
       ],
-      addr: 'Vent 5 bzw. 16, 6458 Vent, Österreich', text: 'Vent (1.900 m) ist eines der höchstgelegenen Dörfer Tirols und der klassische Ausgangspunkt für Hochtouren ins Ötztal. Basis für Auf- und Abstieg zur Breslauer Hütte und Martin-Busch-Hütte. Kein Supermarkt – Proviant bitte von zu Hause mitbringen!',
+      addr: 'Vent 5 bzw. 16, 6458 Vent, Österreich', cam: 'https://www.bergfex.at/vent/webcams/', text: 'Vent (1.900 m) ist eines der höchstgelegenen Dörfer Tirols und der klassische Ausgangspunkt für Hochtouren ins Ötztal. Basis für Auf- und Abstieg zur Breslauer Hütte und Martin-Busch-Hütte. Kein Supermarkt – Proviant bitte von zu Hause mitbringen!',
       link: 'https://www.vent.at/',
       linktext: '🌐 vent.at'
     },
@@ -1078,7 +1097,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZMqSTSenm9KNEsqFjDUm41nbnROopshyE8UP0iuIfDX1wVOdDOkGecYfrLLe0KiLlmhs7XexwfBY6fmK4V7-mVpVjY32eTGY-4oKUzi3WoyAGin8k7duCPFfZAgCGbxIg2ipKXdoHFddyvaXw=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZPqN7gwZAPWDdWQvaOrtpy8oFqgJFKdWa-SAmcVWAymJ6B7rqeUZiwj5XLlxpORU7Z5a_xYUYHmCRyxMnRT9GQbZ3YZtCmEH4zJGPGMhoNNWZVuSSCaKvuVaIzNou_SMpJT3k-zVOfmVPFs97Y=s4800-w800-h600',
       ],
-      addr: 'Breslauer Hütte, 6458 Vent, Österreich (2.844 m)', text: 'DAV-Hütte auf 2.844 m ü. M., direkt unterhalb des Vernagtkees-Gletschers. Ausgangspunkt für Touren auf die Wildspitze (3.768 m, höchster Berg Tirols). Frühstück ab 5 Uhr für Alpinisten. Matratzenlager & Mehrbettzimmer.',
+      addr: 'Breslauer Hütte, 6458 Vent, Österreich (2.844 m)', cam: 'https://www.bergfex.at/vent/webcams/', text: 'DAV-Hütte auf 2.844 m ü. M., direkt unterhalb des Vernagtkees-Gletschers. Ausgangspunkt für Touren auf die Wildspitze (3.768 m, höchster Berg Tirols). Frühstück ab 5 Uhr für Alpinisten. Matratzenlager & Mehrbettzimmer.',
       link: 'http://breslauerhuette.at/',
       linktext: '🌐 breslauerhuette.at'
     },
@@ -1091,7 +1110,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZOQQoLqDlyi38mWrRmGAYCEGfMd6eina0XTMfG_2Qxhq_UIDegSJwXj6Vv3PodSI406X0k15GBx_CSpPCJFLosDdwCwzISCqr3kKr-qBx5Yes6RGLH-jAzF7zl0G3lRZymDjC5oXG9qvnEJ=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZMuUd_UsxMLcmvjEfBq2uoJasbo8wUw6l8-kS2-GsHHa4nemWsKKlPFjshiILFbb44KLXZSZEbp4AJBOM5Vz5cq6FEaT2aULkwwO6ygxjghj8DOk91UrmyWQHsLTxkQ6JbBnqobG0GzjDqSkw=s4800-w800-h600',
       ],
-      addr: 'Martin-Busch-Hütte (Samoarhütte), 6458 Vent, Österreich (2.501 m)', text: 'Auch Samoarhütte genannt. Auf 2.501 m gelegen, beliebt als Stützpunkt für den Similaun (3.606 m) und das Hauslabjoch – dem Fundort von Ötzi dem Eismann (1991). Herzstück der Alpenüberquerung. Familiäre Atmosphäre, gutes Essen, freundliches Team.',
+      addr: 'Martin-Busch-Hütte (Samoarhütte), 6458 Vent, Österreich (2.501 m)', cam: 'https://www.bergfex.at/vent/webcams/', text: 'Auch Samoarhütte genannt. Auf 2.501 m gelegen, beliebt als Stützpunkt für den Similaun (3.606 m) und das Hauslabjoch – dem Fundort von Ötzi dem Eismann (1991). Herzstück der Alpenüberquerung. Familiäre Atmosphäre, gutes Essen, freundliches Team.',
       link: 'https://maps.google.com/?cid=5960982309693835300',
       linktext: '📍 Google Maps'
     },
@@ -1103,7 +1122,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZOJUChxvFUXafYFxsj4qFRzzKrnBZb2A9mbpkWOFLGm3WnZIeM5ThkpdValhEzqPW1U2C8f7TyhPswA1Ux4uY7S-AXkg3x-v40Gutau0qDVVH_1gQ-wXqAPRmwud0eOqXgp4KeB8mnoUv3wxjE=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZM3X8XMemTdaKNlq-TLy-me9b1xG2hcAyGFxxZJA15GfoEqbDd3O7lFlqsylww2jI9V4yU09Fc6UOd6jnRQRSeSqHSteQmGgZfPrpPmykWbZcXpMBy-BK3ivSCmeO04F17Iz9VAOyu4WRc8Mw=s4800-w800-h600',
       ],
-      addr: 'Via Carducci 77, 39012 Meran (Merano), Italien', text: 'Entspannter Zwischenstopp im milden Meran (Südtirol), umgeben von Weinbergen und Obstgärten. Gelegenheit zum Ausruhen, Einkaufen (Taschengeld!) und erste italienische Stadtluft schnuppern. Die JH liegt zentral an der Via Carducci.',
+      addr: 'Via Carducci 77, 39012 Meran (Merano), Italien', cam: 'https://www.bergfex.it/sommer/meran/webcams/', text: 'Entspannter Zwischenstopp im milden Meran (Südtirol), umgeben von Weinbergen und Obstgärten. Gelegenheit zum Ausruhen, Einkaufen (Taschengeld!) und erste italienische Stadtluft schnuppern. Die JH liegt zentral an der Via Carducci.',
       link: 'http://www.jugendherberge.bz/',
       linktext: '🌐 jugendherberge.bz'
     },
@@ -1115,7 +1134,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZM0cIK2mpFWos3TfSUnP8um7ldRe7IUTdgPafH0Zt9B8lXwvrSgUBqQKMloxBCReswMKHQCQIQWt_xn87BgOwB8Q8dyWhF7s0VFsA2O5EjNdqQFeeII_2EaUp_EDiQYndfHGkS0w8PFygzvvHVkwQpMFg=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZNapmVG9Fw-fF4lFzSxDpIVeVc1VDy7KyamzEu_A7CUi5BceiOGp9VPlVaew_C2Gy0WvsdcTrknvctZFQPKjrtms_LlD73QmmB3x2mKbCxzN1gt96gJDuORSPFETincJTx2ykhH6U9p_8mu5Q=s4800-w800-h600',
       ],
-      addr: 'Vigiljoch, 39011 Lana, Südtirol, Italien (ca. 1.500 m)', text: 'Das Vigiljoch liegt auf ca. 1.500 m oberhalb von Lana und bietet einen atemberaubenden Blick ins Etschtal und auf den Meraner Talkessel. Selbstversorgerhütte der evangelischen Kirche – besondere Gemeinschaftserfahrung abseits von Tourismus und Alltag.',
+      addr: 'Vigiljoch, 39011 Lana, Südtirol, Italien (ca. 1.500 m)', cam: 'https://www.bergfex.it/sommer/lana-und-umgebung/webcams/c11119/', text: 'Das Vigiljoch liegt auf ca. 1.500 m oberhalb von Lana und bietet einen atemberaubenden Blick ins Etschtal und auf den Meraner Talkessel. Selbstversorgerhütte der evangelischen Kirche – besondere Gemeinschaftserfahrung abseits von Tourismus und Alltag.',
       link: 'https://maps.google.com/?cid=997769460864076842',
       linktext: '📍 Lage auf Google Maps'
     },
@@ -1127,7 +1146,7 @@
         'https://lh3.googleusercontent.com/place-photos/AJRVUZNyLtWBGH4tblfPBNsN3Xa76RZaVFanDMNhxHA-qud2U3wkWSDy0FXl2ZCTRxvaHZfR5eLPSqZrBu5Zhh7d3DpDFO2Hh7ZkcFOg1ogQ5LquoS6MyzC9GHmvlMx-XPmG3oOhlIV0bXzNI9zhW2o=s4800-w800-h600',
         'https://lh3.googleusercontent.com/place-photos/AJRVUZPbmstpLGN4C3mM0U1esMYQ2Eyli-x_hwFxFyq6NICPWhY8y6Dufjmj1xsb2qKHPWm_a2g6Oxyp_YBQvFej6O7rndsAwy_YvWDSOPwTbvD-rH9iP_OFYcbF9IF7m9_0SP2fnMbX7n8pxC-dhg=s4800-w800-h600',
       ],
-      addr: 'Brunogasse 2, 39042 Brixen (Bressanone), Südtirol', text: 'Das Kassianeum in Brixen ist eine komfortable letzte Station vor der Heimreise. Brixen (Bressanone) ist eine der ältesten Städte Südtirols mit beeindruckendem Dom, mittelalterlichem Kreuzgang und lebhafter Altstadt. Gut gelegen für die Rückfahrt nach Berlin.',
+      addr: 'Brunogasse 2, 39042 Brixen (Bressanone), Südtirol', cam: 'https://www.bergfex.it/sommer/eisacktal/webcams/', text: 'Das Kassianeum in Brixen ist eine komfortable letzte Station vor der Heimreise. Brixen (Bressanone) ist eine der ältesten Städte Südtirols mit beeindruckendem Dom, mittelalterlichem Kreuzgang und lebhafter Altstadt. Gut gelegen für die Rückfahrt nach Berlin.',
       link: 'http://www.jugendherberge.bz/',
       linktext: '🌐 jugendherberge.bz'
     }
@@ -1276,6 +1295,107 @@
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
   }
+
+  // ── REISEBILDER (aus GitHub-Repo-Ordner "fotos/") ──
+  // GitHub-Repo automatisch aus der aktuellen Seiten-URL ableiten (github.io/<repo>/...)
+  function detectGithubRepo() {
+    const host = window.location.hostname; // z.B. kaikoenig.github.io
+    const path = window.location.pathname; // z.B. /alpentour-fws/index.html
+    if (!host.endsWith('.github.io')) return null;
+    const user = host.split('.')[0];
+    const parts = path.split('/').filter(Boolean);
+    const repo = parts[0];
+    if (!user || !repo) return null;
+    return { user, repo };
+  }
+
+  const stationOrder = ['innsbruck','vent','breslauer-huette','martin-busch-huette','meran','vigiljoch','brixen'];
+  const stationLabels = {
+    'innsbruck': 'Innsbruck', 'vent': 'Vent', 'breslauer-huette': 'Breslauer Hütte',
+    'martin-busch-huette': 'Martin-Busch-Hütte', 'meran': 'Meran', 'vigiljoch': 'Vigiljoch', 'brixen': 'Brixen'
+  };
+
+  async function loadTourPhotos() {
+    const repoInfo = detectGithubRepo();
+    const grid = document.getElementById('fotos-grid');
+    const loading = document.getElementById('fotos-loading');
+    const empty = document.getElementById('fotos-empty');
+
+    if (!repoInfo) {
+      loading.textContent = 'Bilder-Anzeige nur auf der veröffentlichten GitHub-Pages-Seite verfügbar.';
+      return;
+    }
+
+    try {
+      const apiUrl = `https://api.github.com/repos/${repoInfo.user}/${repoInfo.repo}/contents/fotos`;
+      const resp = await fetch(apiUrl);
+      if (!resp.ok) {
+        loading.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+      const folders = await resp.json();
+      if (!Array.isArray(folders) || folders.length === 0) {
+        loading.style.display = 'none';
+        empty.style.display = 'block';
+        return;
+      }
+
+      let allImages = [];
+
+      // Für jeden Stations-Unterordner die Bilder laden
+      for (const folder of folders) {
+        if (folder.type !== 'dir') continue;
+        try {
+          const subResp = await fetch(folder.url);
+          const files = await subResp.json();
+          if (Array.isArray(files)) {
+            files.forEach(f => {
+              if (/\.(jpg|jpeg|png|webp)$/i.test(f.name)) {
+                allImages.push({ station: folder.name, url: f.download_url, name: f.name });
+              }
+            });
+          }
+        } catch (e) { /* einzelner Ordner-Fehler ignorieren */ }
+      }
+
+      loading.style.display = 'none';
+
+      if (allImages.length === 0) {
+        empty.style.display = 'block';
+        return;
+      }
+
+      // Sortieren nach Stationsreihenfolge
+      allImages.sort((a, b) => {
+        const ia = stationOrder.indexOf(a.station);
+        const ib = stationOrder.indexOf(b.station);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib) || a.name.localeCompare(b.name);
+      });
+
+      grid.innerHTML = allImages.map(img => `
+        <div style="position:relative;border-radius:6px;overflow:hidden;cursor:pointer;aspect-ratio:1;background:#eee" onclick="window.open('${img.url}','_blank')">
+          <img src="${img.url}" alt="${img.name}" loading="lazy" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.style.display='none'">
+          <div style="position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,0.55);color:white;font-size:0.6rem;padding:2px 4px">${stationLabels[img.station] || img.station}</div>
+        </div>
+      `).join('');
+
+    } catch (e) {
+      loading.textContent = 'Bilder konnten nicht geladen werden.';
+      console.error('Fotos-Fehler:', e);
+    }
+  }
+
+  // Bilder laden sobald die Reisebilder-Sektion erstmals geöffnet wird
+  let fotosLoaded = false;
+  const origToggleSection = toggleSection;
+  toggleSection = function(id) {
+    origToggleSection(id);
+    if (id === 'sec-fotos' && !fotosLoaded) {
+      fotosLoaded = true;
+      loadTourPhotos();
+    }
+  };
 
   // ── WETTER-OVERLAY (Open-Meteo, kein API-Key) ──
   const wxStations = [
